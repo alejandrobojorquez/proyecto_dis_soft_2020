@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Electro-Quiz</title>
+
+    <link rel="icon" href="../static/images/elmt.ico"> <!--Icono-->
+
+    <!--tipografia externa-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!--invocando los styles css-->
+    
+    
+    
+    <link rel="stylesheet" href="../static/css/background.css">
+    
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabla1')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabla2.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabla3.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dataTables.bootstrap.css')}}">
+
+</head>
+<body>
+    <div class="useless">
+       
+        <header class="main-header">
+
+            <div class="topnav">
+                <a href="/">Inicio</a>
+                <a href="file:///C:/Users/aleja/Desktop/UTEC/2020-2/Dise%C3%B1o%20de%20Software/Frontend/templates/categorias.html#" >Puntajes</a>
+                <a href="/enviar_pregunta">Enviar Preguntas</a>
+                <a class="active" href="/admin">Evaluar Preguntas</a>-
+                <a href="/logout">Log out</a>
+            </div>
+        
+        </header>
+    </div>
+
+    <br><br>
+    
+    <!--Carta Principal-->   <!--Notar que todos los divs tienen clase ff en esta seccion-->
+    <div class="container">
+        <section class="content-header">
+          {% for message in get_flashed_messages()%}
+          <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            {{ message }}
+          </div>
+          {% endfor%}
+        </section>
+      
+        <section class="content">
+          <div class="box box-primary">
+
+      
+            <div class="box-body">
+              <table id="dataphone" class="table table-bordered table-striped">
+                <thead align="center">
+                  <tr>
+                    <th>Enunciado</th>
+                    <th>Opcion1</th>
+                    <th>Opcion2</th>
+                    <th>Opcion3</th>
+                    <th>Opcion4</th>
+                    <th>Estado</th>
+                    <th>Accion</th>
+                  </tr>
+                </thead>
+                
+                <tbody>
+                  {% if data|length == 0 %}
+                  <tr>
+                    <td>No Data</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                  </tr>
+                  {% else %}
+                  <tr>
+                    {% for row in data %}
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[7] }}</td>
+                    <td align="center">
+                      <a href="/admin/update/{{ row[0]}}">
+                        <button type="button" class="btn btn-sm btn-warning btn-flat" title="Update"><span
+                            class="glyphicon glyphicon-pencil"></span></button>
+                      </a>
+                      <a href="/admin/delete/{{ row[0]}}">
+                        <button type="button" class="btn btn-sm btn-danger btn-flat" title="Delete"><span
+                            class="glyphicon glyphicon-remove"></span></button>
+                      </a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                  {% endif%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+
+    <script>
+        $(function () {
+            $("#dataphone").DataTable();
+
+        });
+    </script>
+
+</body>
+</html>

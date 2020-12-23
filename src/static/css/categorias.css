@@ -1,0 +1,78 @@
+
+.tarjeta{
+    background:  #FFFFFF; 
+    
+
+}
+
+.boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+}
+.boton_personalizado:hover{
+    text-decoration: none;
+    color: #1883ba;
+    background-color: #ffffff;
+}
+
+h1{
+    font-style: "Courier New";
+    color: #000000;
+}
+
+h5{
+    font-style: "Courier New";
+    color: #000000;
+}
+/*Cards*/  
+.electricos_color{
+    background-color:#2ECC71;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.analogicos_color{
+    background-color:#BD0D0D;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.digitales_color{
+    background-color:#1E6BBF;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.diseno_color{
+    background-color:#65169D;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+
+.modelado_color{
+    background-color:#F6740E;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.redes_color{
+    background-color:#988ECA;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+.card-body,.card-title{
+    color:#FFFFFF;
+}
+
+

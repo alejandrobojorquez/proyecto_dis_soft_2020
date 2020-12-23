@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Electro-Quiz</title>
+
+    <link rel="icon" href="../static/images/elmt.ico"> <!--Icono-->
+
+    <!--tipografia externa-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!--invocando los styles css-->
+    
+    <link rel="stylesheet" href="../static/css/enviarpregunta.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+
+</head>
+<body>
+    <div class="useless">
+       
+        <header class="main-header">
+
+            <div class="topnav">
+                <a href="/">Inicio</a>
+                <a href="#" >Puntajes</a>
+                <a class="active" href="/enviar_pregunta">Enviar Preguntas</a>
+                <a href="/admin/">Evaluar Preguntas</a>
+                <a href="/logout">Log out</a>
+            </div>
+        
+        </header>
+    </div>
+
+    <br><br>
+    
+    <!--Carta Principal-->   <!--Notar que todos los divs tienen clase ff en esta seccion-->
+    <div class="col-md-4">
+    <div class="cards ff">
+        <div class="title-card ff">
+        <H2 class="title">Envianos tu pregunta</H2><br>
+        <H5 class="title">Será revisada y agregada para futuros Quizzes</H5>
+        </div>
+        <br>
+        <div class="card card-body ff">
+       
+        {% if error %}
+        <h3 class="titlew">{{error}}</h3>
+    {% endif %}
+
+    {% if msg %}
+        <h3 class="titlew">{{msg}}</h3>
+    {% endif %}
+        <!--editar formulario con los campos correctos-->
+            <form action="/enviar_pregunta", method="post">
+                <div class="form-group ff">
+                    <textarea name="enunciado" placeholder="Enunciado" cols="50" rows="5"></textarea>
+                </div>
+                <div class="form-group ff">
+                    <input type="text" name="alt1" placeholder="Alternativa 1" class="form-control">
+                </div>
+                <div class="form-group ff">
+                    <input type="text" name="alt2" placeholder="Alternativa 2" class="form-control">
+                </div>  
+                <div class="form-group ff">
+                    <input type="text" name="alt3" placeholder="Alternativa 3" class="form-control">
+                </div>  
+                <div class="form-group ff">
+                    <input type="text" name="alt4" placeholder="Alternativa 4" class="form-control">
+                </div>  
+                <div class="form-group ff">   
+                    <select name="cor_alt" size=9>
+                        <option selected value="0"> Indicar la alternativa correcta </option>
+                            <option value="1">Alternativa 1</option> 
+                            <option value="2">Alternativa 2</option> 
+                            <option value="3">Alternativa 3</option>  
+                            <option value="4">Alternativa 4</option>  
+                    </select>
+                </div>
+                <div class="form-group ff">   
+                    <input type="submit" name="submit" value="Enviar" class="btn btn-primary btn-block">
+                </div> 
+            </form>
+        </div>          
+    </div>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+    <script>
+        $(function () {
+            $("#dataphone").DataTable();
+
+        });
+    </script>
+
+</body>
+</html>

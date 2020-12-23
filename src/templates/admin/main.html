@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Electro-Quiz</title>
+
+    <link rel="icon" href="../static/images/elmt.ico"> <!--Icono-->
+
+    <!--tipografia externa-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    
+    <!--invocando los styles css-->
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+    <link rel="stylesheet" href="../static/css/inicio.css">
+
+</head>
+<body>
+    
+    <div class="useless">
+       
+        <header class="main-header">
+
+            <div class="topnav">
+                <a class="active" href="/">Inicio</a>
+                <a href="file:///C:/Users/aleja/Desktop/UTEC/2020-2/Dise%C3%B1o%20de%20Software/Frontend/templates/categorias.html#" >Puntajes</a>
+                <a href="/enviar_pregunta">Enviar Preguntas</a>
+                <a href="/admin/">Evaluar Preguntas</a>
+                <a href="/logout">Log out</a>
+            </div>
+        
+        </header>
+    </div>   
+    
+    <br><br><br><br>
+    
+    <!--Carta Principal-->
+    <div class="col-md-3">
+    <div class="cards">
+        <br>
+        <H1 class="title">Electro-Quiz</H1>
+        <br>
+        <H3 class="title">Admin Account</H3>
+        <br>
+        <div class="row">
+            <img src=../static/images/iconoelectronica.png width="200" class="circular-rad">        
+        </div> 
+        <br><br><br>  
+        <div class="row">
+            <div class="centrar">
+                <a class="boton_pers"  href="/categorias">¡Empecemos!</a>
+                <br><br><br><br>
+            </div>
+        </div> 
+    </div>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+    <script>
+        $(function () {
+            $("#dataphone").DataTable();
+
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+

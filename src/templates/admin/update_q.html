@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Electro-Quiz</title>
+
+    <link rel="icon" href="../static/images/elmt.ico"> <!--Icono-->
+
+    <!--tipografia externa-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!--invocando los styles css-->
+    
+    
+    
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabla1')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabla2.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tabla3.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dataTables.bootstrap.css')}}">
+    
+
+</head>
+<body>
+    
+
+    <br><br>
+    
+    <!--Carta Principal-->   <!--Notar que todos los divs tienen clase ff en esta seccion-->
+    <div class="container">
+      <section class="content">
+          <div class="box box-info">
+              <div class="box-header with-border">
+                  <center>
+                      <h3 class="box-title">Actualizar Pregunta</h3>
+                  </center>
+              </div>
+  
+              <form class="form-horizontal" method="POST" action="/admin/updateusuario">
+                  {% for row in data %}
+                  <div class="box-body">
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">Enunciado</label>
+                        
+                          <div class="col-sm-10">
+                              <input name="enunciado" value="{{ row[1] }}" type="text" class="form-control" 
+                                  autocomplete="off" required>
+                          </div>
+                      </div>
+  
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">Opcion1</label>
+                          
+  
+                          <div class="col-sm-10">
+                              <input name="op1" value="{{ row[2] }}" type="text" class="form-control"
+                                   autocomplete="off" required>
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="col-sm-2 control-label">Opcion2</label>
+
+                        <div class="col-sm-10">
+                            <input name="op2" value="{{ row[3] }}" type="text" class="form-control"
+                                 autocomplete="off" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Opcion3</label>
+
+                        <div class="col-sm-10">
+                            <input name="op3" value="{{ row[4] }}" type="text" class="form-control"
+                                 autocomplete="off" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Opcion4</label>
+
+                        <div class="col-sm-10">
+                            <input name="op4" value="{{ row[5] }}" type="text" class="form-control"
+                                 autocomplete="off" required>
+                        </div>
+                    </div>
+  
+                      <div class="form-group">
+                          <label class="col-sm-2 control-label">Respuesta correcta</label>
+  
+                          <div class="col-sm-10">
+                              <input name="corr" value="{{ row[6] }}" type="text" class="form-control"
+                                   autocomplete="off" required>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Estado</label>
+
+                    <div class="col-sm-10">
+                        <input name="estate" value="{{ row[7] }}" type="text" class="form-control"
+                             autocomplete="off" required>
+                    </div>
+                </div>
+  
+                  <div class="box-footer">
+                      <a href="/admin/"><button type="button" class="btn btn-default">Cancel</button></a>
+                      <input name="update" type="submit" class="btn btn-info pull-right" value="Update">
+                  </div>
+                  {% endfor %}
+              </form>
+          </div>
+      </section>
+  </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/jquery-2.2.3.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/app.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/dataTables.bootstrap.min.js')}}"></script>
+
+
+    <script>
+        $(function () {
+            $("#dataphone").DataTable();
+
+        });
+    </script>
+
+</body>
+</html>

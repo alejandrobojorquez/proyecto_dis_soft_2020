@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta</title>
+    <link rel="icon" href="../static/images/elmt.ico"> <!--Icono-->
+
+    <!--Tipografía externa (fuentes importadas)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <!--Invocando las hojas de estilo-->
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/categorias.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+    <link rel="stylesheet" href="../static/css/enviarpregunta.css">
+</head>
+<body>
+    <br><br><br><br>
+    <div class="col-md-4">
+        <div class="cards ff">
+            <div class="card card-body ff">
+            <form action="/pregunta/", method="post">
+                {% if question %}
+                    <h5 class="titlew">{{question.1}} </h5> <br><br>
+                    <!--Es necesario colocar el input dentro de un ancla para poder redirigir-->
+                    
+                    <input type="submit" name="opcion" value="{{question.2}}" class="btn btn-primary btn-block"> <br>
+                    <input type="submit" name="opcion" value="{{question.3}}" class="btn btn-primary btn-block"> <br>
+                    <input type="submit" name="opcion" value="{{question.4}}" class="btn btn-primary btn-block" > <br>
+                    <input type="submit" name="opcion" value="{{question.5}}" class="btn btn-primary btn-block" > <br>
+                {% endif %}                         
+            </form>
+            </div>
+        </div>
+        </div>
+
+        <br><br>
+        
+        <div class="col-4 ">
+            <a class="btn btn-primary btn-block"  href="/categorias">Haz clic aquí para volver al menú principal</a>
+        </div>
+        
+    
+</body>
+</html>

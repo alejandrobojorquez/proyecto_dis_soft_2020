@@ -1,0 +1,36 @@
+.boton_pers{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 2%;
+    border: 2px solid #0016b0;
+}
+.boton_pers:hover{
+    text-decoration: none;
+    color: #1883ba;
+    background-color: #ffffff;
+}
+
+.tarjeta{
+    background:  #333; 
+}
+
+
+.cards{
+    background-image: url(../images/fondo_ckto.png) ; 
+    border-radius: 1%;
+}
+
+.col-md-3{
+    margin:auto;
+}
+.title {
+    font-family: 'Comfortaa', cursive;
+    font-weight: 1000;
+    color: #ffffff;
+    text-align: center;
+}
+
