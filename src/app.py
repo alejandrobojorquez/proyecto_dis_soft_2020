@@ -1,6 +1,7 @@
 from flask import Flask, flash, render_template, redirect, url_for, request, session
-from dao.DAOUsuario import DAOUsuario
 from flask_mysqldb import MySQL
+from dao.DAOUsuario import DAOUsuario
+
 import mysql.connector
 import random
 
